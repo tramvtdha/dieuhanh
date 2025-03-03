@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+
+  <title>ĐÀI VT ĐHA</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: 'Montserrat', sans-serif;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+body{
+	background: #5dade2;
+	color: #565e6b;
+}
+
+.wrapper {
+    width: 90%;
+    height: 100%;
+    background: #fff;
+    margin: 15px auto 0;
+    border-radius: 15px; /* Bo tròn góc */
+    padding: 20px;
+}
+
+
+.wrapper .title{
+	padding: 30px 20px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: 700;
+	border-bottom: 1px solid #ebedec;
+}
+
+.wrapper .tabs_wrap{
+	padding: 20px;
+	border-bottom: 1px solid #ebedec;
+}
+
+.wrapper .tabs_wrap ul{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+.wrapper .tabs_wrap ul li{
+	width: 135px;
+    text-align: center;
+    background: #e9ecf1;
+    border-right: 1px solid #c1c4c9;
+    padding: 13px 15px;
+	cursor: pointer;
+	-webkit-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.wrapper .tabs_wrap ul li:first-child{
+	border-top-left-radius: 25px;
+	border-bottom-left-radius: 25px;
+}
+
+.wrapper .tabs_wrap ul li:last-child{
+	border-right: 0px;
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
+}
+
+.wrapper .tabs_wrap ul li:hover,
+.wrapper .tabs_wrap ul li.active{
+	background: #7fc469;
+	color: #fff;
+}
+
+.wrapper .container .item_wrap{
+	padding: 10px 20px;
+	border-bottom: 1px solid #ebedec;
+	cursor: pointer;
+}
+
+.wrapper .container .item_wrap:hover{
+	background: #e9ecf1;
+}
+
+.wrapper .container .item{
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+
+.item_wrap .item .item_left{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.item_wrap .item_left img{
+	width: 70px;
+	height: 70px;
+	display: block;
+}
+
+.item_wrap .item_left .data{
+	margin-left: 20px;
+}
+
+.item_wrap .item_left .data .name{
+	font-weight: 600;
+}
+
+.item_wrap .item_left .data .distance{
+	color: #7f8b9b;
+	font-size: 14px;
+	margin-top: 3px;
+}
+
+.item_wrap .item_right .status{
+	position: relative;
+	color: #77818d;
+}
+
+.item_wrap .item_right .status:before{
+	content: "";
+	position: absolute;
+	top: 5px;
+    left: -12px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #b3bbc8;
+}
+
+.item_wrap.offline .item_right .status{
+	color: #b3bbc8;	
+}
+
+.item_wrap.online .item_right .status:before{
+	background: #7fc469;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no">
+  <div class="wrapper">
+  <div class="title">
+    QUẢN LÝ ĐÀI VT ĐHA
+  </div>
+  <div class="tabs_wrap">
+    <ul>
+      <li data-tabs="Tab1">VÔ TUYẾN</li>
+      <li data-tabs="Tab2">CÁP QUANG</li>
+      <li data-tabs="both" class="active">All</li>
+    </ul>
+  </div>
+  <div class="container">
+    <ul>
+      <li class="item_wrap Tab1 online">
+        <div class="item">
+          <div class="item_left">
+            <div class="img">
+              <img src="Index_data/votuyen1.png" alt="">
+            </div>
+            <div class="data">
+              <p class="name">VẬT TƯ VT</p>
+              <p class="distance">Luôn luôn vươn xa</p>
+            </div>
+          </div>
+          <div class="item_right">
+            <div class="status">Online</div>
+          </div>
+        </div>
+      </li>
+      <li class="item_wrap Tab1 online">
+        <div class="item">
+          <div class="item_left">
+            <div class="img">
+              <img src="Index_data/image2.png" alt="">
+            </div>
+            <div class="data">
+              <p class="name">KÊNH LUỒNG VT</p>
+              <p class="distance">Kết nối kênh luồng</p>
+            </div>
+          </div>
+          <div class="item_right">
+            <div class="status">Online</div>
+          </div>
+        </div>
+      </li>
+      <li class="item_wrap Tab1 offline">
+        <div class="item">
+          <div class="item_left">
+            <div class="img">
+              <img src="Index_data/2pGPLrl.png" alt="">
+            </div>
+            <div class="data">
+              <p class="name">TÀI LIỆU VT</p>
+              <p class="distance">Tài liệu Vô tuyến</p>
+            </div>
+          </div>
+          <div class="item_right">
+            <div class="status">Offline</div>
+          </div>
+        </div>
+      </li>
+
+	  
+	  
+      <li class="item_wrap Tab2 online">
+        <div class="item">
+          <div class="item_left">
+            <div class="img">
+              <img src="Index_data/capquang1.png" alt="">
+            </div>
+            <div class="data">
+              <p class="name">LỊCH TTCQ</p>
+              <p class="distance">Lịch TTCQ hàng ngày</p>
+            </div>
+          </div>
+          <div class="item_right">
+            <div class="status">Online</div>
+          </div>
+        </div>
+      </li>
+      <li class="item_wrap Tab2 offline">
+        <div class="item">
+          <div class="item_left">
+            <div class="img">
+              <img src="Index_data/jQj1I8E.png" alt="">
+            </div>
+            <div class="data">
+              <p class="name">KPI CÁP QUANG</p>
+              <p class="distance">KPI SCCQ</p>
+            </div>
+          </div>
+          <div class="item_right">
+            <div class="status">Offline</div>
+          </div>
+        </div>
+      </li>
+      <li class="item_wrap Tab2 online">
+        <div class="item">
+          <div class="item_left">
+            <div class="img">
+              <img src="Index_data/h2EFLO9.png" alt="">
+            </div>
+            <div class="data">
+              <p class="name">SƠ ĐỒ CÁP QUANG</p>
+              <p class="distance">Sơ đồ CQ</p>
+            </div>
+          </div>
+          <div class="item_right">
+            <div class="status">Online</div>
+          </div>
+        </div>
+      </li>
+      <li class="item_wrap Tab2 online">
+        <div class="item">
+          <div class="item_left">
+            <div class="img">
+              <img src="Index_data/yUW8QfW.png" alt="">
+            </div>
+            <div class="data">
+              <p class="name">PA CHUYỂN CÁP </p>
+              <p class="distance">Phương án chuyển cáp UC</p>
+            </div>
+          </div>
+          <div class="item_right">
+            <div class="status">Online</div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+  
+<script id="rendered-js">
+//Sửa ảnh hình tròn:
+//https://crop-circle.imageonline.co/
+var tabs = document.querySelectorAll(".tabs_wrap ul li");
+var Tab1s = document.querySelectorAll(".Tab1");
+var Tab2s = document.querySelectorAll(".Tab2");
+var all = document.querySelectorAll(".item_wrap");
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    tabs.forEach(tab => {
+      tab.classList.remove("active");
+    });
+    tab.classList.add("active");
+    var tabval = tab.getAttribute("data-tabs");
+
+    all.forEach(item => {
+      item.style.display = "none";
+    });
+
+    if (tabval == "Tab1") {
+      Tab1s.forEach(Tab1 => {
+        Tab1.style.display = "block";
+      });
+    } else
+    if (tabval == "Tab2") {
+      Tab2s.forEach(Tab2 => {
+        Tab2.style.display = "block";
+      });
+    } else
+    {
+      all.forEach(item => {
+        item.style.display = "block";
+      });
+    }
+
+  });
+});
+
+    </script>
+
+  
+
+
+
+</body></html>
