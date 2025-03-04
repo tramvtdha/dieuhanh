@@ -441,7 +441,7 @@ font-family: 'Bungee Inline',Serif;
 .main-wrapper #app .products .product {
   width: auto; /* Sửa lại width */
   max-width: 200px; /* Giữ cố định kích thước */
-  margin:25px auto; /* Đảm bảo căn giữa */
+  margin:5px auto; /* Đảm bảo căn giữa */
 }
 
 .main-wrapper #app .products .product .image {
@@ -518,7 +518,7 @@ font-family: 'Bungee Inline',Serif;
 .main-wrapper #app .products .product .name {
   font-weight: bold;
   /* font-size: 1.1em; */
-  font-size:25 px;
+  font-size: 1.1em;
   text-align: center;
 }
 
@@ -690,143 +690,19 @@ font-family: 'Bungee Inline',Serif;
 }
 
 
-@media (max-width: 600px) {
-  .main-wrapper #app .products .product .description,
-  .main-wrapper #app .products .product .name,
-  .main-wrapper #app .products .product .price,
-  .main-wrapper #app .products .product .warranty,
-  .main-wrapper #app .products .product .madein {
-  width: calc(100vw - 0.5em);
-  
-  }
- 
-
-
-  .main-wrapper #app .products .product .image {
-height: calc(77vw - 0.5em);
-}
-  .main-wrapper #app .products {
-    display: block;  
-
-  }
-
-.main-wrapper #app .cart {
-  position: absolute;
-  right: 0em;
-  top: 0em;
-  text-align: right;
-color: black;
-width: auto;
-border-radius: 5px;
-z-index: 6;
-overflow-y: scroll;
-
-}
-
-.main-wrapper .header h1 {
-  font-size: 1em;
-
-}
-
-  
-}
-
 @media screen and (max-width: 980px) {
-
-.main-wrapper #app .modalWrapper .modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: auto;
-  min-width: 100%;
-  transform: translate(-50%, -50%);
-  background: white;
-  padding: 2em;
-  text-align: center;
-  max-height: calc(100% - 2em);
-  overflow-y: scroll;
-  overflow-x: hidden;
-  -webkit-animation: openUp 0.1s;
-          animation: openUp 0.1s;
-  z-index: 3;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-
- .main-wrapper #app .products {
-  align: center;  
-  
+  .main-wrapper #app .products {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-.main-wrapper #app .cart {
-  position: absolute;
-  right: 0em;
-  top: 0em;
-  text-align: right;
-color: black;
-width: auto;
-border-radius: 5px;
-z-index: 20;
-max-height: calc(100%);
-overflow-y: scroll;
-background: linear-gradient(to right,#e6faff,#00cccc);
-}  
-  
-  
- @media (orientation:landscape){
-
-.main-wrapper #app .products .product .image {
-  width: 13em;
-  height: 14em;
-  margin-bottom: 0.5em;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: box-shadow 0.25s;
-  border-radius: 5px;
-
-} 
- .main-wrapper #app .products {
-  align: center;  
-  
+  .main-wrapper #app .modalWrapper .modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
- 
-.main-wrapper #app .products {
-align: left;
-display: grid;
-grid-template-columns:206px 206px 206px;
-}
-
-
-.main-wrapper #app .cart {
-  position: absolute;
-  right: 0em;
-  top: 0em;
-  text-align: right;
-color: black;
-width: auto;
-border-radius: 5px;
-z-index: 6;
-overflow-y: scroll;
-background: linear-gradient(to right,#e6faff,#00cccc);
-}
-
-.main-wrapper #app .modalWrapper .modal {
-
-width: auto;
-z-index: 20;
-overflow-y: scroll;
-
-}
-
-
-  .main-wrapper #app .products .product .name,
-  .main-wrapper #app .products .product .description,
-  .main-wrapper #app .products .product .price,
-  .main-wrapper #app .products .product .warranty,
-  .main-wrapper #app .products .product .madein {
-  width: 203px;
-  text-align: left;
 }
 
 
