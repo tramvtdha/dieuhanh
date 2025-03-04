@@ -419,6 +419,18 @@ font-family: 'Bungee Inline',Serif;
 
 .main-wrapper #app {
   margin: 0 auto;
+  padding: 0em;
+  text-align: center;
+  max-height: 110em;
+  height:auto;  
+  background-image: linear-gradient(to bottom right,#16a085,#a2d9ce,#e6f5ff,#fcf3cf,#a2d9ce, #16a085);
+
+}
+
+
+
+.main-wrapper #app {
+  margin: 0 auto;
   padding: 0;
   text-align: center;
   max-height: 110em;
@@ -476,166 +488,368 @@ font-family: 'Bungee Inline',Serif;
 
 
 
+.main-wrapper #app .products .product .image img {
+  width: 0;
+  height: 0;
+  margin-bottom: 0.5em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.25s;
+  border-radius: 5px;
+  text-align: right;
+}
+
+.main-wrapper #app .products .product .image:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 0, 0, 0.1);
+  opacity: 0;
+  transition: all 0.25s;
+}
+
+
+
+
+
+.main-wrapper #app .products .product .image:hover {
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.main-wrapper #app .products .product .image:hover:before {
+  opacity: 1;
+}
+.main-wrapper #app .products .product .image:hover:after {
+  top: 50%;
+}
+
+.main-wrapper #app .products .product .name {
+  font-weight: bold;
+  /* font-size: 1.1em; */
+  font-size: 1.1em;
+  text-align: center;
+}
+
+
+
+.main-wrapper #app .products .product .description {
+  font-style: italic;
+    align: left;
+  text-align: left;
+}
+
+
+
+.main-wrapper #app .modalWrapper {
+  position: relative;
+  width: 100%;
+}
+.main-wrapper #app .modalWrapper .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+
+
+
+
+
+
+.main-wrapper #app .modalWrapper .modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  min-width: 100%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 1em;
+  text-align: center;
+  max-height: calc(100%);
+  overflow-y: scroll;
+  overflow-x: scroll;
+  -webkit-animation: openUp 0.1s;
+          animation: openUp 0.1s;
+  z-index: 3;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+
+
+
+.main-wrapper #app .modalWrapper .modal .close {
+  position: fixed;
+  top: -0.5em;
+  right: -0.5em;
+  cursor: pointer;
+  padding: 1em;
+}
+
+
+
+
+
+
+.main-wrapper #app .modalWrapper .modal .imageWrapper {
+  width: 12em;
+  height: 10em;
+  
+  //margin: 0.5em auto;
+  
+
+}
+
+
+.main-wrapper #app .modalWrapper .modal .imageWrapper .image {
+
+  width: 50%;
+  height: 50%;
+  transition: transform 0.2s;
+  z-index: 4;
+}
+
+
+
+.main-wrapper #app .modalWrapper .modal .name {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+.main-wrapper #app .modalWrapper .modal .description {
+  font-style: italic;
+  text-align: left;
+}
+.main-wrapper #app .modalWrapper .modal .details {
+  max-width: auto;
+  margin: 0 auto;
+  padding: 0.5em 0;
+  text-align: left;
+}
+.main-wrapper #app .modalWrapper .modal .price {
+  font-weight: bold;
+  padding-bottom: 0.5em;
+}
+
+
 @media (max-width: 600px) {
-  .main-wrapper #app .cart, 
-  .main-wrapper #app .cart .cartTable {
+  .main-wrapper #app .cart, .main-wrapper #app .cart .cartTable {
     width: 100% !important;
   }
 
-  .main-wrapper #app .products {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Chia thành 2 cột */
-    gap: 0.5em; /* Tạo khoảng cách giữa các sản phẩm */
-    text-align: left;
+  .main-wrapper #app .products .product .image {
+    width: calc(100vw - 2.5em);
+    height: calc(100vw - 2.5em);
+
+  }
+  .main-wrapper #app .modalWrapper .prevproduct, .main-wrapper #app .modalWrapper .nextproduct {
+    display: none;
+  }
+  .main-wrapper #app .modalWrapper .modal.checkout {
     width: 100%;
   }
+  .main-wrapper #app .modalWrapper .modal .imageWrapper {
+    width: calc(100vw - 4em);
+    height: calc(100vw - 4em);
+  }
 
+
+
+  .main-wrapper #app .products {
+    text-align: left;
+	width: 100%;
+  }
   .main-wrapper #app .products .product {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%; /* Chiếm toàn bộ chiều rộng cột */
+    display: block;
+	width: 100%;
   }
+  .main-wrapper #app .products .product .description {
+    display: block;
+	width: 100%;
+  } 
+ 
+ 
+.main-wrapper #app .modalWrapper .modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  min-width: 100%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2em;
+  text-align: center;
+  max-height: calc(100% - 2em);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-animation: openUp 0.1s;
+          animation: openUp 0.1s;
+  z-index: 3;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+ 
+  
+}
 
-  .main-wrapper #app .products .product .image {
-    width: 100%; /* Ảnh co giãn theo cột */
-    height: auto; /* Tự động tính toán chiều cao */
-  }
 
+@media (max-width: 600px) {
   .main-wrapper #app .products .product .description,
   .main-wrapper #app .products .product .name,
   .main-wrapper #app .products .product .price,
   .main-wrapper #app .products .product .warranty,
   .main-wrapper #app .products .product .madein {
-    width: calc(100% - 1.7em);
+  width: calc(100vw - 1.7em);
+  
+  }
+ 
+
+
+  .main-wrapper #app .products .product .image {
+height: calc(77vw - 1.7em);
+}
+  .main-wrapper #app .products {
+    display: block;  
+
   }
 
-  .main-wrapper #app .modalWrapper .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    transform: translate(-50%, -50%);
-    background: white;
-    padding: 2em;
-    text-align: center;
-    max-height: calc(100% - 2em);
-    overflow-y: scroll;
-    overflow-x: hidden;
-    -webkit-animation: openUp 0.1s;
-    animation: openUp 0.1s;
-    z-index: 3;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
+.main-wrapper #app .cart {
+  position: absolute;
+  right: 0em;
+  top: 0em;
+  text-align: right;
+color: black;
+width: auto;
+border-radius: 5px;
+z-index: 6;
+overflow-y: scroll;
 
-  .main-wrapper #app .cart {
-    position: absolute;
-    right: 0;
-    top: 0;
-    text-align: right;
-    color: black;
-    width: auto;
-    border-radius: 5px;
-    z-index: 6;
-    overflow-y: scroll;
-  }
+}
 
-  .main-wrapper .header h1 {
-    font-size: 1em;
-  }
+.main-wrapper .header h1 {
+  font-size: 1em;
+
+}
+
+  
 }
 
 @media screen and (max-width: 980px) {
-  .main-wrapper #app .modalWrapper .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    transform: translate(-50%, -50%);
-    background: white;
-    padding: 2em;
-    text-align: center;
-    max-height: calc(100% - 2em);
-    overflow-y: scroll;
-    overflow-x: hidden;
-    -webkit-animation: openUp 0.1s;
-    animation: openUp 0.1s;
-    z-index: 3;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
 
-  .main-wrapper #app .products {
-    align-items: left;
-  }
-
-  .main-wrapper #app .cart {
-    position: absolute;
-    right: 0;
-    top: 0;
-    text-align: right;
-    color: black;
-    width: auto;
-    border-radius: 5px;
-    z-index: 20;
-    max-height: 100%;
-    overflow-y: scroll;
-    background: linear-gradient(to right, #e6faff, #00cccc);
-  }
+.main-wrapper #app .modalWrapper .modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  min-width: 100%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2em;
+  text-align: center;
+  max-height: calc(100% - 2em);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-animation: openUp 0.1s;
+          animation: openUp 0.1s;
+  z-index: 3;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
-@media (orientation: landscape) {
-  .main-wrapper #app .products .product .image {
-    width: 13em;
-    height: 14em;
-    margin-bottom: 0.5em;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: box-shadow 0.25s;
-    border-radius: 5px;
+ .main-wrapper #app .products {
+  align: left;  
+  
   }
 
-  .main-wrapper #app .products {
-    display: grid;
-    grid-template-columns: repeat(3, 206px);
-    gap: 10px;
-  }
+.main-wrapper #app .cart {
+  position: absolute;
+  right: 0em;
+  top: 0em;
+  text-align: right;
+color: black;
+width: auto;
+border-radius: 5px;
+z-index: 20;
+max-height: calc(100%);
+overflow-y: scroll;
+background: linear-gradient(to right,#e6faff,#00cccc);
+}  
+  
+  
+ @media (orientation:landscape){
 
-  .main-wrapper #app .cart {
-    position: absolute;
-    right: 0;
-    top: 0;
-    text-align: right;
-    color: black;
-    width: auto;
-    border-radius: 5px;
-    z-index: 6;
-    overflow-y: scroll;
-    background: linear-gradient(to right, #e6faff, #00cccc);
-  }
+.main-wrapper #app .products .product .image {
+  width: 13em;
+  height: 14em;
+  margin-bottom: 0.5em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.25s;
+  border-radius: 5px;
 
-  .main-wrapper #app .modalWrapper .modal {
-    width: auto;
-    z-index: 20;
-    overflow-y: scroll;
+} 
+ .main-wrapper #app .products {
+  align: left;  
+  
   }
+ 
+.main-wrapper #app .products {
+align: left;
+display: grid;
+grid-template-columns:206px 206px 206px;
+}
+
+
+.main-wrapper #app .cart {
+  position: absolute;
+  right: 0em;
+  top: 0em;
+  text-align: right;
+color: black;
+width: auto;
+border-radius: 5px;
+z-index: 6;
+overflow-y: scroll;
+background: linear-gradient(to right,#e6faff,#00cccc);
+}
+
+.main-wrapper #app .modalWrapper .modal {
+
+width: auto;
+z-index: 20;
+overflow-y: scroll;
+
+}
+
 
   .main-wrapper #app .products .product .name,
   .main-wrapper #app .products .product .description,
   .main-wrapper #app .products .product .price,
   .main-wrapper #app .products .product .warranty,
   .main-wrapper #app .products .product .madein {
-    width: 203px;
-    text-align: left;
-  }
-
-  .share-btn {
-    right: 3%;
-  }
+  width: 203px;
+  text-align: left;
 }
 
+
+
+
+.share-btn {
+right: 3%;
+
+}
+
+
+}
 
 
 
